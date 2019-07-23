@@ -27,12 +27,9 @@ class Question extends Component {
 }
 
 const mapDispatchToProps = {
-  addScore: (teamName) => ({
-      type: 'ADD_POINTS',
-      name: teamName
-    })
-  }
+  addScore: (teamName) => ({type: 'ADD_POINTS', name: teamName})
+}
 
 
-
-export default connect(null, mapDispatchToProps)(Question);
+const connectedQuestion = connect(null, mapDispatchToProps)(Question)
+export { connectedQuestion as Question }
