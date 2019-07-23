@@ -1,0 +1,44 @@
+.app-button {
+  font-size: 30px Arial;
+  font-weight: 700;
+  color: white;
+  width: 200px;
+  height: 50px;
+  background-color: #54ac2c;
+  border: 5px outset #65b937;
+}
+
+.answer-container {
+  width: 80vw;
+  height: 60vh;
+  grid-row-gap: 2vh;
+  grid-column-gap: 2vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.answer {
+  font-size: 5vh;
+  font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+  font-weight: 1000;
+  border-radius: 50px;
+  color: white;
+}
+
+.answer:nth-child(1) {
+  background-color: tomato;
+  border: 0.5vw solid crimson;
+}
+.answer:nth-child(2) {
+  background-color: cornflowerblue;
+  border: 0.5vw solid royalblue;
+}
+.answer:nth-child(3) {
+  background-color: #f6bb0a;
+  border: 0.5vw solid orange;
+}
+.answer:nth-child(4) {
+  background-color: #65b937;
+  border: 0.5vw solid #54ac2c;
+}

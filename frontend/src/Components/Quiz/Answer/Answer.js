@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Result = (props) => {
+const Answer = (props) => {
   return(
     <div/>
   )
 }
 
-export default Result
+export default Answer
