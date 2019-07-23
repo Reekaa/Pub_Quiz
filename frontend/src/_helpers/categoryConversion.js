@@ -1,4 +1,4 @@
-const categoryConversion = {
+export const categoryConversion = {
   generalKnowledge: 9,
   books: 10,
   film: 11,
@@ -24,3 +24,5 @@ const categoryConversion = {
   anime: 31,
   cartoons: 32
 }
+
+// module.exports = categoryConversion;
