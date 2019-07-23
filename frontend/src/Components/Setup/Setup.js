@@ -71,11 +71,11 @@ const mapDispatchToProps = (dispatch) => ({
             type: 'ADD_QUESTION_BATCH',
             category,
             questions: questionsData.results
-          },
-          {
-            type: 'GAME_STARTED'
           }
-        )
+        );
+        dispatch({
+          type: 'GAME_STARTED'
+        })
         })
 
       })
