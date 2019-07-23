@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import PlaceHolder from './Placeholder/Placeholder'
-import {Question} from './Question/Question'
+import Question from './Question/Question'
 import Answer from './Answer/Answer'
 import Result from './Result/Result'
 

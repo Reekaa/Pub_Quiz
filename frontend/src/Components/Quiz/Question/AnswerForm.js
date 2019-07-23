@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import ButtonsHeader from './AnswerForm/Header'
+import Header from '../../../PatternLibrary/Header'
 import AnswerButtons from './AnswerForm/FourButton'
 import './Question.css'
 
@@ -23,10 +23,15 @@ class AnswerForm extends Component {
   render() {
     return(
       <div className='answer-form-Container'>
-        <ButtonsHeader teamName={this.props.teamName} />
+        <div className='teamname-container'>
+          <Header header='Team: ' />
+          <Header header={this.props.teamname}/>
+        </div>
         <AnswerButtons
           answers={this.state.answers}
           correct={this.state.correct}
+          teamName={this.props.teamName}
+          addScore={this.props.addScore}
         />
       </div>
     )

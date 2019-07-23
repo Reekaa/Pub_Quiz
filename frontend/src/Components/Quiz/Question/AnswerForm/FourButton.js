@@ -21,7 +21,8 @@ class AnswerButtons extends Component {
 
   logAnswer(value) {
     if (value) {
-      console.log(value);
+      console.log(this.props.teamName);
+      this.props.addScore(this.props.teamName)
     } else {
       console.log(value);
     }

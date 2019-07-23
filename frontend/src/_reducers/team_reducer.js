@@ -1,4 +1,4 @@
-const teamReducer = (state=[], action) => {
+const teamReducer = (state=[{name: 'IncubationLab3', score: 0}], action) => {
   switch (action.type) {
     case 'ADD_TEAM_DATA':
       const newState = [...state, action.team]
@@ -6,14 +6,15 @@ const teamReducer = (state=[], action) => {
     case 'BLITZ_TEAM_DATA':
       return []
     case 'ADD_POINTS':
-      let teamState
-      for (team of state) {
+      let newPoints = state.map((team, index) => {
         if (action.name === team.name) {
-          teamState = team
+          let newTeam = {name: team.name, score: (team.score+1)}
+          return newTeam
+        } else {
+          return team
         }
-      }
-      let newState [...state, {...teamState, score: (teamstate.score+1)}]
-      return newState
+      })
+      return newPoints;
     default:
       return state;
   };
