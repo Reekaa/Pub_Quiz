@@ -20,9 +20,9 @@ class Quiz extends Component {
     return (
       <div className="quiz-container">
         {this.state.showModal === 'placeholder' && <PlaceHolder setModal={this.setModal}/>}
-        {this.state.showModal === 'question' && <Question />}
-        {this.state.showModal === 'answer' && <Answer />}
-        {this.state.showModal === 'result' && <Result />}
+        {this.state.showModal === 'question' && <Question setModal={this.setModal} teams={this.props.teams}/>}
+        {this.state.showModal === 'answer' && <Answer setModal={this.setModal}/>}
+        {this.state.showModal === 'result' && <Result setModal={this.setModal}/>}
       </div>
     );
   }

@@ -20,6 +20,7 @@ class AnswerButtons extends Component {
   };
 
   logAnswer(value) {
+    this.props.setModal('answer')
     if (value) {
       console.log(this.props.teamName);
       this.props.addScore(this.props.teamName)

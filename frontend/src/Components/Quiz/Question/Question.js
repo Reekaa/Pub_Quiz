@@ -7,6 +7,13 @@ import './Question.css'
 class Question extends Component {
   constructor(props) {
     super(props)
+    this.state = {
+      currentTeam: 1
+    }
+  }
+
+  changeTeam = (value) => {
+    this.setState({currentTeam: value})
   }
 
   render() {
@@ -18,8 +25,12 @@ class Question extends Component {
         <AnswerForm
           correct_answer="Mac OS"
           incorrect_answers= {["Windows", "Linux", "OS/2"]}
-          teamName='IncubationLab3'
+          teamName={this.props.teams[this.state.currentTeam-1].name}
           addScore={this.props.addScore}
+          setModal={this.props.setModal}
+          changeTeam={this.changeTeam}
+          currentTeam={this.state.currentTeam}
+          teams={this.props.teams}
         />
       </div>
     )
