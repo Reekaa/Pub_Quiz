@@ -4,7 +4,7 @@ import './Question.css'
 const QuestionHeader = (props) => {
   return(
     <div className='question'>
-      What is the capital of Europe?
+      {props.question}
     </div>
   )
 }
