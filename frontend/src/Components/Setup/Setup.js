@@ -1,8 +1,37 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import AddTeamForm from './AddTeamForm/AddTeamForm';
-import TeamList from './AddTeamForm/AddTeamForm';
+import TeamList from './TeamList/TeamList';
 import StartGame from './StartGame/StartGame';
+// import { categoryConversion }  from '../_helpers/categoryConversion';
+
+// replace with import:
+const categoryConversion = {
+  generalKnowledge: 9,
+  books: 10,
+  film: 11,
+  music: 12,
+  musicalsTheatre: 13,
+  television: 14,
+  videoGames: 15,
+  boardGames: 16,
+  nature: 17,
+  computers: 18,
+  mathematics: 19,
+  mythology: 20,
+  sports: 21,
+  geography: 22,
+  history: 23,
+  politics: 24,
+  art: 25,
+  celebrities: 26,
+  animals: 27,
+  vehicles: 28,
+  comics: 29,
+  gadgets: 30,
+  anime: 31,
+  cartoons: 32
+}
 
 const createTeam = (teamName) => {
   return {
@@ -12,10 +41,11 @@ const createTeam = (teamName) => {
 };
 
 const selectedCategories = [
-  'General Knowledge',
-  'Entertainment: Film',
-  'Entertainment: Music',
-  'Sports', 'Celebrities'
+  'generalKnowledge',
+  'film',
+  'music',
+  'sports',
+  'celebrities'
 ];
 
 const mapStateToProps = (state) => {
@@ -31,23 +61,25 @@ const mapDispatchToProps = (dispatch) => ({
     })
   },
   getQuestions() {
-    const categories = questionCategories.forEach(category => {
+    selectedCategories.forEach(category => {
       dispatch(() => {
-        fetch(`https://opentdb.com/api.php?amount=5&category=${category.number}&difficulty=easy&type=multiple`)
+        fetch(`https://opentdb.com/api.php?amount=5&category=${categoryConversion[category]}&difficulty=easy&type=multiple`)
         .then(res => res.json())
         .then(questionsData => {
+          console.log(questionsData);
           dispatch({
             type: 'ADD_QUESTION_BATCH',
-            data: questionsData
-          })
+            category,
+            questions: questionsData.results
+          },
+          {
+            type: 'GAME_STARTED'
+          }
+        )
         })
+
       })
     })
-    Promise.race(categories).then(
-      dispatch(( => {
-
-      }))
-    );
   }
 })
 
@@ -64,4 +96,4 @@ const Setup = (props) => {
 
 }
 
-export default connect(mapDispatchToProps)(Setup);
+export default connect(null, mapDispatchToProps)(Setup);

@@ -4,7 +4,7 @@ import Button from '../../../PatternLibrary/Button';
 const StartGame = (props) => {
 
   return (
-    <Button handleClick={props.getQuestions} />
+    <Button function={props.getQuestions} buttonText={'some text'}/>
   )
 
 };

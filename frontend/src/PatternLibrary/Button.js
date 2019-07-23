@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
 
 const Button = (props) => {
-  return (
-    <button />
+  return(
+    <div className='button' onClick={props.function}>{props.buttonText}</div>
   )
 }
 
-export default Button;
+export default Button
