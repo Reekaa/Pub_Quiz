@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import Quiz from './Components/Quiz/Quiz'
 import './App.css';
+import './StyleLibrary.css'
 
 function App() {
   return (
