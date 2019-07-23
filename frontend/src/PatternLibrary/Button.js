@@ -2,8 +2,8 @@ import React from 'react'
 
 const Button = (props) => {
   return(
-    <div></div>
+    <div className='button' onClick={props.function}>{props.buttonText}</div>
   )
 }
 
-export default
+export default Button
