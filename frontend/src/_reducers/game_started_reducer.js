@@ -5,7 +5,7 @@ const gameStartedReducer = (state=false, action) => {
     case 'GAME_FINISHED':
       return false
     default:
-    return state;
+      return state;
   };
 };
 

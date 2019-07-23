@@ -6,7 +6,7 @@ const teamReducer = (state=[], action) => {
     case 'BLITZ_TEAM_DATA':
       return []
     default:
-    return state;
+      return state;
   };
 };
 
