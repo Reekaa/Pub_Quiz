@@ -4,7 +4,7 @@ const teamReducer = (state=[], action) => {
       const newState = [...state, action.category, ...action.questions]
       return newState;
     case 'REMOVE_QUESTION':
-      const removeState = state.slice(0,1)
+      const removeState = state.slice(1)
       return removeState
     default:
       return state;
