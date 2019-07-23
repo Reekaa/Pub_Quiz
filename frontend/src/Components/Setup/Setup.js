@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import AddTeamForm from './AddTeamForm/AddTeamForm';
-// import TeamList from './AddTeamForm/AddTeamForm';
-// import AddTeamForm from './AddTeamForm/AddTeamForm';
-// import StartGame from './StartGame';
+import AddTeamForm from './AddTeamForm/AddTeamForm';
+import TeamList from './AddTeamForm/AddTeamForm';
+import StartGame from './StartGame/StartGame';
 
 const createTeam = (teamName) => {
   return {
@@ -11,6 +10,13 @@ const createTeam = (teamName) => {
     score: 0
   };
 };
+
+const selectedCategories = [
+  'General Knowledge',
+  'Entertainment: Film',
+  'Entertainment: Music',
+  'Sports', 'Celebrities'
+];
 
 const mapStateToProps = (state) => {
   return state.teams;
@@ -25,17 +31,23 @@ const mapDispatchToProps = (dispatch) => ({
     })
   },
   getQuestions() {
-    // TODO forEach loop for multiple dispatches
-    dispatch(() => {
-      fetch('https://opentdb.com/api.php?amount=5&category=12&difficulty=easy&type=multiple')
-      .then(res => res.json())
-      .then(questionsData => {
-        dispatch({
-          type: 'ADD_QUESTION_BATCH',
-          data: questionsData
+    const categories = questionCategories.forEach(category => {
+      dispatch(() => {
+        fetch(`https://opentdb.com/api.php?amount=5&category=${category.number}&difficulty=easy&type=multiple`)
+        .then(res => res.json())
+        .then(questionsData => {
+          dispatch({
+            type: 'ADD_QUESTION_BATCH',
+            data: questionsData
+          })
         })
       })
     })
+    Promise.race(categories).then(
+      dispatch(( => {
+
+      }))
+    );
   }
 })
 
@@ -43,10 +55,10 @@ const Setup = (props) => {
 
   return (
     <>
-      <h1>SetUp rendering</h1>
+      <h1>SetUp rendering THIS</h1>
       <AddTeamForm addTeam={props.addTeam}/>
-      {/*<TeamList teams={props.teams}/>
-      <StartGame getQuestions={props.getQuestions}/>*/}
+      <TeamList teams={props.teams}/>
+      <StartGame getQuestions={props.getQuestions}/>
     </>
   )
 
