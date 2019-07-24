@@ -6,6 +6,7 @@ import List from '../TeamList/List';
 
 
 
+
 class AddTeamForm extends Component {
     constructor(props) {
         super(props);
@@ -14,6 +15,7 @@ class AddTeamForm extends Component {
         };
 
         this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleFormSubmit = this.handleFormSubmit.bind(this);
 
     }
 
@@ -21,28 +23,30 @@ class AddTeamForm extends Component {
       this.setState({inputtedTeam: event.target.value})
     }
 
-    handleFromSubmit(event){
+    handleFormSubmit(event){
       event.preventDefault();
+      this.props.addTeam(this.state.inputtedTeam);
+      this.resetForm();
+    }
+
+    resetForm(){
+      this.setState({inputtedTeam: ''})
     }
 
     render () {
         return (
-            <form onSubmit = {this.handleFromSubmit}>
+            <form onSubmit = {this.handleFormSubmit}>
                 <input
                 placeholder = 'Team name...'
                 id = 'team-input'
                 name = 'team'
                 type = 'text'
-                value = {this.state.inputedTeam}
+                value = {this.state.inputtedTeam}
                 onChange = {this.handleInputChange}
                 />
-                <Header />
-                <List />
                 <Button buttonText = 'ADD'
-                        function = 'function'
-                />
-                <BigButton buttonText = 'START'
-                           function = 'function'
+                        function = {this.handleFormSubmit}
+
                 />
             </form>
         )

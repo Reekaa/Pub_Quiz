@@ -1,10 +1,10 @@
 import React from 'react';
+import TeamList from './TeamList';
 
-const List = () => {
+const List = (props) => {
   return (
     <ul>
-      <li>Team1</li>
-      <li>Team2</li>
+      {props.createListItems(props.teams)}
     </ul>
   )
 }
