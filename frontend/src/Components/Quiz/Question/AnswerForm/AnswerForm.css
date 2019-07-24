@@ -1,0 +1,9 @@
+.teamname-container {
+  display: flex;
+  font-size: 3.5vh;
+  font-weight: 600;
+  font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+}
+.teamname {
+  padding: 10px;
+}

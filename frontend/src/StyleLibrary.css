@@ -1,4 +1,4 @@
-.app-button {
+.button {
   font-size: 30px Arial;
   font-weight: 700;
   color: white;
@@ -45,7 +45,10 @@
   grid-template-rows: 1fr 1fr;
 }
 
-.answer {
+.big-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 5vh;
   font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
   font-weight: 1000;
@@ -53,19 +56,19 @@
   color: white;
 }
 
-.answer:nth-child(1) {
+.big-button:nth-child(1) {
   background-color: tomato;
   border: 0.5vw solid crimson;
 }
-.answer:nth-child(2) {
+.big-button:nth-child(2) {
   background-color: cornflowerblue;
   border: 0.5vw solid royalblue;
 }
-.answer:nth-child(3) {
+.big-button:nth-child(3) {
   background-color: #f6bb0a;
   border: 0.5vw solid orange;
 }
-.answer:nth-child(4) {
+.big-button:nth-child(4) {
   background-color: #65b937;
   border: 0.5vw solid #54ac2c;
 }

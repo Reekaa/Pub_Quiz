@@ -3,12 +3,15 @@ import PlaceHolder from './Placeholder/Placeholder'
 import Question from './Question/Question'
 import Answer from './Answer/Answer'
 import Result from './Result/Result'
+import {connect} from 'react-redux'
+
 
 class Quiz extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      showModal: 'question'
+      showModal: 'question',
+      currentQuestion: 0,
     }
 
   }
@@ -16,18 +19,48 @@ class Quiz extends Component {
   setModal = (value) => {
     this.setState({showModal: value})
   }
+  incrementQuestion = () => {
+    console.log(this.state.currentQuestion);
+    console.log(this.props.questions.length-1);
+    if (this.state.currentQuestion === this.props.questions.length-1) {
+      this.setModal('result')
+    } else {
+      this.setModal('question')
+      this.setState({currentQuestion: this.state.currentQuestion+1})
+    }
+  }
 
   render() {
     return (
       <div className="quiz-container">
-        {this.state.showModal === 'placeholder' && <PlaceHolder setModal={this.setModal}/>}
-        {this.state.showModal === 'question' && <Question />}
-        {this.state.showModal === 'answer' && <Answer />}
-        {this.state.showModal === 'result' && <Result />}
-        <button onClick={this.setResult}>test button</button>
+        {this.state.showModal === 'question' && !this.props.questions[this.state.currentQuestion].category && <PlaceHolder
+          setModal={this.setModal}
+          incrementQuestion={this.incrementQuestion}
+          gameStarted = {this.gameStarted}
+          category={this.props.questions[this.state.currentQuestion]}
+        />}
+        {this.state.showModal === 'question' && this.props.questions[this.state.currentQuestion].category && <Question
+          setModal={this.setModal}
+          teams={this.props.teams}
+          questions={this.props.questions}
+          currentQuestion={this.state.currentQuestion}
+          incrementQuestion={this.incrementQuestion}
+        />}
+        {this.state.showModal === 'answer' && <Answer
+          setModal={this.setModal}
+          incrementQuestion={this.incrementQuestion}
+        />}
+        {this.state.showModal === 'result' && <Result setModal={this.setModal} toggleQuiz={this.props.toggleQuiz}/>}
       </div>
     );
   }
 }
 
-export default Quiz
+function mapStateToProps(state) {
+  return {
+    teams: state.teams ,
+    questions: state.questions
+  }
+}
+
+export default connect(mapStateToProps)(Quiz)
