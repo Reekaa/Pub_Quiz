@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import logo from './logo.svg';
 import Quiz from './Components/Quiz/Quiz';
-import Setup from './Components/Setup/Setup';
+import Setup from './Components/Setup/Setup.js';
 import './App.css';
 import './StyleLibrary.css'
 
