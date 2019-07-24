@@ -6,7 +6,7 @@ const Placeholder = (props) => {
 
   return(
     <div>
-      <NextRound />
+      <NextRound category={this.props.category}/>
       <Button
       function={() => {props.setModal('question')}} buttonText='Go!'/>
     </div>

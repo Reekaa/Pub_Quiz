@@ -19,7 +19,9 @@ class Quiz extends Component {
   render() {
     return (
       <div className="quiz-container">
-        {this.state.showModal === 'placeholder' && <PlaceHolder setModal={this.setModal}/>}
+        {this.state.showModal === 'placeholder' && <PlaceHolder
+        category={this.props.questions[this.props.currentQuestion].category}
+        setModal={this.setModal}/>}
         {this.state.showModal === 'question' && <Question />}
         {this.state.showModal === 'answer' && <Answer />}
         {this.state.showModal === 'result' && <Result />}
