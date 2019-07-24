@@ -20,11 +20,11 @@ class Question extends Component {
     return(
       <div>
         <Header
-          header="Which operating system was released first?"
+          header={this.props.questions[this.props.currentQuestion].question}
         />
         <AnswerForm
-          correct_answer="Mac OS"
-          incorrect_answers= {["Windows", "Linux", "OS/2"]}
+          correct_answer={this.props.questions[this.props.currentQuestion].correct_answer}
+          incorrect_answers= {this.props.questions[this.props.currentQuestion].incorrect_answers}
           teamName={this.props.teams[this.state.currentTeam-1].name}
           addScore={this.props.addScore}
           setModal={this.props.setModal}

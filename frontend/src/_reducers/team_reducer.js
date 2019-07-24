@@ -1,4 +1,4 @@
-const teamReducer = (state=[{name: 'IncubationLab3', score: 0}], action) => {
+const teamReducer = (state=[{name: 'IncubationLab3', score: 0}, {name: 'IncubationLab2', score: 0}, {name: 'IncubationLab1', score: 0}], action) => {
   switch (action.type) {
     case 'ADD_TEAM_DATA':
       const newState = [...state, action.team]

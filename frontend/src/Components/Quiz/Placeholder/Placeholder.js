@@ -4,6 +4,7 @@ const Placeholder = (props) => {
 
   const handleGo = () => {
     props.setModal('question')
+    props.incrementQuestion()
   }
 
   return(
