@@ -10,6 +10,12 @@ class Result extends Component{
     this.state = {
       reveal: null
     }
+
+    this.handleClick = this.handleClick.bind(this)
+  }
+
+  handleClick(){
+    this.props.handleNewGameClick()
   }
   
   render(){
