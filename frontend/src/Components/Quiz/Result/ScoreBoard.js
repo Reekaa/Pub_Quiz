@@ -15,7 +15,7 @@ const ScoreBoard = (props) => {
 
   return(
     <div>
-      {renderLeaderBoard()}
+      {renderLeaderBoard}
     </div>
   )
 }
