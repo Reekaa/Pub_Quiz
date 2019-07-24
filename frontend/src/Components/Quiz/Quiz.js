@@ -37,6 +37,7 @@ class Quiz extends Component {
           setModal={this.setModal}
           incrementQuestion={this.incrementQuestion}
           gameStarted = {this.gameStarted}
+          category={this.props.questions[this.state.currentQuestion]}
         />}
         {this.state.showModal === 'question' && this.props.questions[this.state.currentQuestion].category && <Question
           setModal={this.setModal}
