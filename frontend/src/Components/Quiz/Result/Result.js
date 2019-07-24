@@ -28,7 +28,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-  handleNewGameClick(){
+  handleNewGameClick = () => {
     dispatch({
       type: 'BLITZ_TEAM_DATA'
     })
