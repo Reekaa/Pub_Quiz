@@ -1,12 +1,14 @@
 import React from 'react';
 import logo from './logo.svg';
-import Quiz from './Components/Quiz/Quiz'
+import Quiz from './Components/Quiz/Quiz';
+import Setup from './Components/Setup/Setup';
 import './App.css';
 import './StyleLibrary.css'
 
 function App() {
   return (
     <div className="App">
+      <Setup />
       <Quiz />
     </div>
   );
