@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import AddTeamForm from './AddTeamForm/AddTeamForm';
 import TeamList from './TeamList/TeamList';

@@ -13,6 +13,7 @@ class Quiz extends Component {
       showModal: 'question',
       currentQuestion: 0,
     }
+
   }
 
   setModal = (value) => {
