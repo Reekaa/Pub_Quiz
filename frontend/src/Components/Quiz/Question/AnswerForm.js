@@ -25,7 +25,7 @@ class AnswerForm extends Component {
       <div className='answer-form-Container'>
         <div className='teamname-container'>
           <Header header='Team: ' />
-          <Header header={this.props.teamname}/>
+          <Header header={this.props.teamName}/>
         </div>
         <AnswerButtons
           answers={this.state.answers}
