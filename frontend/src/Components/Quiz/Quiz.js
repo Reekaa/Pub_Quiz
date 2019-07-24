@@ -8,7 +8,7 @@ class Quiz extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      showModal: 'placeholder'
+      showModal: 'result'
     }
   }
 

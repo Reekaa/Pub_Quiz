@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Score = () => {
+const Score = (props) => {
   return(
     <div className='score'>{props.text}</div>
   )

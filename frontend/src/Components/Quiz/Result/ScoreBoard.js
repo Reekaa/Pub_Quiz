@@ -1,5 +1,5 @@
 import React from 'react'
-import ListItem from '../../PatternLibrary/ListItem'
+import ListItem from '../../../PatternLibrary/ListItem'
 import Score from './Score'
 
 const ScoreBoard = (props) => {
