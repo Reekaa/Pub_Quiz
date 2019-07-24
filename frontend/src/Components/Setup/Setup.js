@@ -48,6 +48,8 @@ const selectedCategories = [
   'celebrities'
 ];
 
+
+
 const mapStateToProps = (state) => {
   return state.teams;
 };
@@ -90,7 +92,7 @@ const Setup = (props) => {
       <h1>SetUp rendering THIS</h1>
       <AddTeamForm addTeam={props.addTeam}/>
       <TeamList teams={props.teams}/>
-      <StartGame getQuestions={props.getQuestions}/>
+      <StartGame getQuestions={props.getQuestions} toggleQuiz={props.toggleQuiz}/>
     </>
   )
 
