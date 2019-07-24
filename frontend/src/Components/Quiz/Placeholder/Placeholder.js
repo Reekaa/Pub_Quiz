@@ -3,7 +3,6 @@ import React from 'react'
 const Placeholder = (props) => {
 
   const handleGo = () => {
-    props.setModal('question')
     props.incrementQuestion()
   }
 

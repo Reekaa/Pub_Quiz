@@ -12,9 +12,9 @@ class AnswerButtons extends Component {
       const correct = (this.props.correct === index);
       return <BigButton
         key={index}
-        buttonText={answer}
+        buttonText={this.props.decodeEntities(answer)}
         function={()=>{this.logAnswer(correct)}}
-      /> 
+      />
     })
   };
 

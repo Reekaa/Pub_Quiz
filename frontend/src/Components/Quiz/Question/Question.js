@@ -16,11 +16,21 @@ class Question extends Component {
     this.setState({currentTeam: value})
   }
 
+  // this prevents any overhead from creating the object each time
+
+  decodeEntities (str) {
+    var txt = document.createElement("textarea");
+    txt.innerHTML = str;
+    return txt.value;
+  }
+
+
+
   render() {
     return(
       <div>
         <Header
-          header={this.props.questions[this.props.currentQuestion].question}
+          header={this.decodeEntities(this.props.questions[this.props.currentQuestion].question)}
         />
         <AnswerForm
           correct_answer={this.props.questions[this.props.currentQuestion].correct_answer}
@@ -31,6 +41,7 @@ class Question extends Component {
           changeTeam={this.changeTeam}
           currentTeam={this.state.currentTeam}
           teams={this.props.teams}
+          decodeEntities={this.decodeEntities}
         />
       </div>
     )

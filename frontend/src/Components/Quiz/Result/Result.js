@@ -16,8 +16,9 @@ class Result extends Component{
 
   handleClick(){
     this.props.handleNewGameClick()
+    this.props.toggleQuiz()
   }
-  
+
   render(){
     return(
       <div>
@@ -30,7 +31,9 @@ class Result extends Component{
 }
 
 const mapStateToProps = (state) => {
-  return state.teams;
+  return {
+    teams: state.teams
+  }
 };
 
 const mapDispatchToProps = dispatch => ({

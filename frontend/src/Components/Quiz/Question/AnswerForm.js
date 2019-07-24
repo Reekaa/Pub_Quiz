@@ -36,6 +36,7 @@ class AnswerForm extends Component {
           changeTeam={this.props.changeTeam}
           currentTeam={this.props.currentTeam}
           teams={this.props.teams}
+          decodeEntities={this.props.decodeEntities}
         />
       </div>
     )

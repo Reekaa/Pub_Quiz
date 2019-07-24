@@ -20,7 +20,14 @@ class Quiz extends Component {
     this.setState({showModal: value})
   }
   incrementQuestion = () => {
-    this.setState({currentQuestion: this.state.currentQuestion+1})
+    console.log(this.state.currentQuestion);
+    console.log(this.props.questions.length-1);
+    if (this.state.currentQuestion === this.props.questions.length-1) {
+      this.setModal('result')
+    } else {
+      this.setModal('question')
+      this.setState({currentQuestion: this.state.currentQuestion+1})
+    }
   }
 
   render() {
@@ -42,7 +49,7 @@ class Quiz extends Component {
           setModal={this.setModal}
           incrementQuestion={this.incrementQuestion}
         />}
-        {this.state.showModal === 'result' && <Result setModal={this.setModal}/>}
+        {this.state.showModal === 'result' && <Result setModal={this.setModal} toggleQuiz={this.props.toggleQuiz}/>}
       </div>
     );
   }

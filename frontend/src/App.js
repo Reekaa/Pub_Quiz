@@ -23,7 +23,7 @@ class App extends Component {
     return (
       <div className="App">
         {!this.state.showQuiz && <Setup toggleQuiz={this.toggleQuiz}/>}
-        {this.state.showQuiz && <Quiz />}
+        {this.state.showQuiz && <Quiz toggleQuiz={this.toggleQuiz}/>}
       </div>
     );
   }
