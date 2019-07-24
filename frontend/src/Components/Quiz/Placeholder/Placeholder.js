@@ -4,6 +4,11 @@ import Button from '../../../PatternLibrary/Button'
 
 const Placeholder = (props) => {
 
+  const handleGo = () => {
+    props.setModal('question')
+    props.incrementQuestion()
+  }
+
   return(
     <div>
       <NextRound category={this.props.category}/>

@@ -3,8 +3,13 @@ import Button from '../../../PatternLibrary/Button';
 
 const StartGame = (props) => {
 
+  const handleClick = () => {
+    props.getQuestions()
+    setTimeout(function(){ props.toggleQuiz(true); }, 1000);
+  }
+
   return (
-    <Button function={props.getQuestions} buttonText={'some text'}/>
+    <Button function={() => handleClick()} buttonText={'some text'}/>
   )
 
 };

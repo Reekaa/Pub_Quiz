@@ -32,6 +32,10 @@ class AnswerForm extends Component {
           correct={this.state.correct}
           teamName={this.props.teamName}
           addScore={this.props.addScore}
+          setModal={this.props.setModal}
+          changeTeam={this.props.changeTeam}
+          currentTeam={this.props.currentTeam}
+          teams={this.props.teams}
         />
       </div>
     )
